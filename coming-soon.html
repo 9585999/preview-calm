@@ -8,42 +8,42 @@
 			documentElement.classList.add( 'is-loaded' );
 		};
 	</script><link rel="stylesheet" href="./assets/index-d096a666.css">
-<link rel="stylesheet" href="./assets/index-b82acc64.css"></head> <body class="tmpl-coming-soon">     <div class="site" id="page"> <div class="site-inner">  <div class="c-area u-bg-none u-fg-text" data-module="coming-soon">  <div class="u-view u-size-wide u-mb-5 u-pbe-5"> <h1 class="c-area-title neon">Coming Soon...</h1> <div class="c-area-timer" id="timer" data-value="7"> <span class="timer-h">00</span>:<span class="timer-m">00</span>:<span class="timer-s">08</span> </div> </div>  </div>  </div> </div>    </body></html>  <script type="module">
+<link rel="stylesheet" href="./assets/index-b82acc64.css"></head> <body class="tmpl-coming-soon">     <div class="site" id="page"> <div class="site-inner">  <div class="c-area u-bg-none u-fg-text" data-module="coming-soon">  <div class="u-view u-size-wide u-mb-5 u-pbe-5"> <h1 class="c-area-title neon">Coming Soon...</h1> <div class="c-area-timer" id="timer" data-value="7"> <span class="timer-h">00</span>:<span class="timer-m">00</span>:<span class="timer-s">08</span> </div> </div>  </div>   </div> </div>    <script type="module">
 
-	let timeLeft = document.querySelector('#timer').getAttribute('data-value');
+			let timeLeft = document.querySelector('#timer').getAttribute('data-value');
 
-	const hoursElement   = document.querySelector('.timer-h');
-	const minutesElement = document.querySelector('.timer-m');
-	const secondsElement = document.querySelector('.timer-s');
+			const hoursElement   = document.querySelector('.timer-h');
+			const minutesElement = document.querySelector('.timer-m');
+			const secondsElement = document.querySelector('.timer-s');
 
-	if (hoursElement && minutesElement && secondsElement) {
-		const timer = setInterval(() => {
-			if (timeLeft <= 0) {
-				clearInterval(timer);
-				hoursElement.textContent   = '00';
-				minutesElement.textContent = '00';
-				secondsElement.textContent = '00';
+			if (hoursElement && minutesElement && secondsElement) {
+				const timer = setInterval(() => {
+					if (timeLeft <= 0) {
+						clearInterval(timer);
+						hoursElement.textContent   = '00';
+						minutesElement.textContent = '00';
+						secondsElement.textContent = '00';
 
-				[ document.querySelector('h1'), hoursElement.parentElement ].forEach( ( elem ) => {
-					if ( elem.classList.contains( 'c-area-title' ) ) {
-						elem.textContent = 'Whoops!';
+						[ document.querySelector('h1'), hoursElement.parentElement ].forEach( ( elem ) => {
+							if ( elem.classList.contains( 'c-area-title' ) ) {
+								elem.textContent = 'Whoops!';
+							}
+
+							elem.classList.toggle( 'neon' );
+						} );
+
+						setTimeout(() => ( window.location.href = '/' ), 2000);
 					}
 
-					elem.classList.toggle( 'neon' );
-				} );
+					const hours = Math.floor(timeLeft / 3600);
+					const minutes = Math.floor((timeLeft % 3600) / 60);
+					const seconds = timeLeft % 60;
 
-				setTimeout(() => ( window.location.href = '/' ), 2000);
+					hoursElement.textContent = hours.toString().padStart(2, '0');
+					minutesElement.textContent = minutes.toString().padStart(2, '0');
+					secondsElement.textContent = seconds.toString().padStart(2, '0');
+
+					timeLeft--;
+				}, 1000);
 			}
-
-			const hours = Math.floor(timeLeft / 3600);
-			const minutes = Math.floor((timeLeft % 3600) / 60);
-			const seconds = timeLeft % 60;
-
-			hoursElement.textContent = hours.toString().padStart(2, '0');
-			minutesElement.textContent = minutes.toString().padStart(2, '0');
-			secondsElement.textContent = seconds.toString().padStart(2, '0');
-
-			timeLeft--;
-		}, 1000);
-	}
-</script>
+		</script>  </body></html> 
