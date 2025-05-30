@@ -1,0 +1,1 @@
+.c-image{pointer-events:none;contain:paint}.c-image[alt]{font-size:1rem}.c-cover{overflow:clip;transform:translateZ(0)}@supports not (overflow:clip){.c-cover{overflow:hidden}}.c-cover picture{display:contents}@supports not (display:contents){.c-cover picture{display:inline}}
