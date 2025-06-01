@@ -1,129 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" class="not-js">
+<html class=not-js lang=en>
 
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <meta name="google" content="notranslate">
-
-    <meta name="robots" content="index, follow">
-    <meta name="keywords" content="lifestyle, minimalism, technology, design, travel">
-    <meta name="description" content="Calm - a lifestyle blog about minimalism, technology, design & travel.">
-
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="es_ES">
-    <meta property="og:image" content=".//assets/screenshot-86b73f50.png">
-
-    <link rel="icon" type="image/svg+xml" href="./assets/favicon-2fa7f7c1.svg">
-
-    <link rel="preload" href="./assets/reboot-8dbe26ae.css" as="style">
-    <link rel="preload" href="./assets/global-9c0daab8.css" as="style">
-
-    <link rel="stylesheet" href="./assets/reboot-8dbe26ae.css" media="all">
-    <link rel="stylesheet" href="./assets/global-9c0daab8.css" media="all">
-
-
-
+    <meta charset=UTF-8>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <meta content=notranslate name=google>
+    <meta content="index, follow" name=robots>
+    <meta content="lifestyle, minimalism, technology, design, travel" name=keywords>
+    <meta content="Calm - a lifestyle blog about minimalism, technology, design & travel." name=description>
+    <meta content=website property=og:type>
+    <meta content=es_ES property=og:locale>
+    <meta content=.//assets/screenshot-86b73f50.png property=og:image>
+    <link href=./assets/favicon-2fa7f7c1.svg rel=icon type=image/svg+xml>
+    <link href=./assets/reboot-c3fb1191.css rel=preload as=style>
+    <link href=./assets/global-ac3fe8be.css rel=preload as=style>
+    <link href=./assets/reboot-c3fb1191.css rel=stylesheet media=all>
+    <link href=./assets/global-ac3fe8be.css rel=stylesheet media=all>
     <title>Calm | Coming Soon</title>
-
-    <script type="module">
+    <script type=module>
         const {
-            documentElement: html
+            documentElement: s
         } = document;
-        html.classList.replace('not-js', 'has-js');
-        window.onload = function() {
-            html.classList.add('is-loaded');
-        };
+        s.classList.replace("not-js", "has-js"), window.onload = function() {
+            s.classList.add("is-loaded")
+        }
     </script>
-    <link rel="stylesheet" href="./assets/index-50f4d230.css">
-    <link rel="stylesheet" href="./assets/index-b82acc64.css">
+    <link href=./assets/index-50f4d230.css rel=stylesheet>
+    <link href=./assets/index-b82acc64.css rel=stylesheet>
     <link rel="icon" href="./favicon-32x32.png" type="image/png">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="./manifest.webmanifest" crossorigin="anonymous">
 </head>
 
-<body class="tmpl-coming-soon">
-
-
-
-
-
-
-
-
-    <div class="site" id="page">
-        <div class="site-inner">
-
-
-            <div class="c-area u-bg-none u-fg-text" data-module="coming-soon">
-
-
-
-                <div class="u-view u-size-wide u-mb-5 u-pbe-5">
+<body class=tmpl-coming-soon>
+    <div class=site id=page>
+        <div class=site-inner>
+            <div class="c-area u-bg-none u-fg-text" data-module=coming-soon>
+                <div class="u-mb-5 u-pbe-5 u-size-wide u-view">
                     <h1 class="c-area-title neon">Coming Soon...</h1>
-
-                    <div class="c-area-timer" id="timer" data-value="7">
-                        <span class="timer-h">00</span>:<span class="timer-m">00</span>:<span class="timer-s">08</span>
-                    </div>
+                    <div class=c-area-timer id=timer data-value=7><span class=timer-h>00</span>:<span class=timer-m>00</span>:<span class=timer-s>08</span></div>
                 </div>
-
-
             </div>
-
-
-
-
         </div>
     </div>
-
-
-
-
-
-
-    <script type="module">
-        let timeLeft = document.querySelector('#timer').getAttribute('data-value');
-
-        const hoursElement = document.querySelector('.timer-h');
-        const minutesElement = document.querySelector('.timer-m');
-        const secondsElement = document.querySelector('.timer-s');
-
+    <script type=module>
+        let timeLeft = document.querySelector("#timer").getAttribute("data-value");
+        const hoursElement = document.querySelector(".timer-h"),
+            minutesElement = document.querySelector(".timer-m"),
+            secondsElement = document.querySelector(".timer-s");
         if (hoursElement && minutesElement && secondsElement) {
-            const timer = setInterval(() => {
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    hoursElement.textContent = '00';
-                    minutesElement.textContent = '00';
-                    secondsElement.textContent = '00';
-
-                    [document.querySelector('h1'), hoursElement.parentElement].forEach((elem) => {
-                        if (elem.classList.contains('c-area-title')) {
-                            elem.textContent = 'Whoops!';
-                        }
-
-                        elem.classList.toggle('neon');
-                    });
-
-                    setTimeout(() => (window.location.href = 'https://live.verstaem.online/calm/index.html'), 2000);
-                }
-
-                const hours = Math.floor(timeLeft / 3600);
-                const minutes = Math.floor((timeLeft % 3600) / 60);
-                const seconds = timeLeft % 60;
-
-                hoursElement.textContent = hours.toString().padStart(2, '0');
-                minutesElement.textContent = minutes.toString().padStart(2, '0');
-                secondsElement.textContent = seconds.toString().padStart(2, '0');
-
-                timeLeft--;
-            }, 1000);
+            const t = setInterval((() => {
+                timeLeft <= 0 && (clearInterval(t), hoursElement.textContent = "00", minutesElement.textContent = "00", secondsElement.textContent = "00", [document.querySelector("h1"), hoursElement.parentElement].forEach((t => {
+                    t.classList.contains("c-area-title") && (t.textContent = "Whoops!"), t.classList.toggle("neon")
+                })), setTimeout((() => window.location.href = "https://live.verstaem.online/calm/index.html"), 2e3));
+                const e = Math.floor(timeLeft / 3600),
+                    n = Math.floor(timeLeft % 3600 / 60),
+                    o = timeLeft % 60;
+                hoursElement.textContent = e.toString().padStart(2, "0"), minutesElement.textContent = n.toString().padStart(2, "0"), secondsElement.textContent = o.toString().padStart(2, "0"), timeLeft--
+            }), 1e3)
         }
     </script>
-
-
 </body>
 
 </html>
